@@ -50,10 +50,7 @@ Semi-supervised learning
 
 Use **combination** of **labelled** and **unlabelled** data
 
-Build classifier to distinguish labelled from unlabelled data and distinguish labels between each other:
-
-+ Binary classifier lesion vs non-lesion becomes
-+ Trinary classifier lesion vs non-lesion vs unlabelled
+![](./ssl.png)
 
 Results & Outlook
 ========================================================
