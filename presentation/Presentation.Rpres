@@ -55,21 +55,33 @@ Medical Image Computing and Computer assisted intervention
 + 20 segmented MRI images from 2 sources
 + Standard benchmark for MS segmentation
 
-Deep learning for lesion segmentation
+Approach
 ========================================================
 
 Similar to image segmentation: work with **3D convolutional neural networks** and classify voxels
 
-Enhance data with **Generative adverserial networks** and use **semi-supervised learning**
+- Balanced random sampling of voxels 
+- GAN to create additional data
+- Semi supervised approach to use external data
+- Deep Convolutional Network
 
-![](./gan.png)
+![](./Presentation-figure/patch.png)
+
+
+Generative Adverserial Networks
+========================================================
+Create more data with **Generative adverserial networks** and use **semi-supervised learning**
+
+![](./Presentation-figure/gan.png)
 
 Semi-supervised learning
 ========================================================
 
 Use **combination** of **labelled** and **unlabelled** data
 
-![](./ssl.png)
+![](./Presentation-figure/ssl.png)
+
+
 
 Results
 ========================================================
@@ -83,6 +95,7 @@ Future Work
 ========================================================
   - Incorporate GAN directly into classifier
   - Add more data sources
+  - Test transfer learning from BRATS
   - Submit predictions to MICCAI and other competions
   - Test on *real* clinical data from ongoing trials
 
