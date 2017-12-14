@@ -41,9 +41,11 @@ $\Longrightarrow$ Export annotation for supervised learning is not feasible, thu
 Deep learning for lesion segmentation
 ========================================================
 
-Similar to image segmentation: work with **3D convolutional neural networks** and classify each voxel individually: direct segmentation very hard because of small training set (20 MRIs)
+Similar to image segmentation: work with **3D convolutional neural networks** and classify voxels
 
 Enhance data with **Generative adverserial networks** and use **semi-supervised learning**
+
+![](./gan.png)
 
 Semi-supervised learning
 ========================================================
