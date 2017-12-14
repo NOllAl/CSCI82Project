@@ -58,19 +58,18 @@ Medical Image Computing and Computer assisted intervention
 Deep learning for lesion segmentation
 ========================================================
 
-Similar to image segmentation: work with **3D convolutional neural networks** and classify each voxel individually: direct segmentation very hard because of small training set (20 MRIs)
+Similar to image segmentation: work with **3D convolutional neural networks** and classify voxels
 
 Enhance data with **Generative adverserial networks** and use **semi-supervised learning**
+
+![](./gan.png)
 
 Semi-supervised learning
 ========================================================
 
 Use **combination** of **labelled** and **unlabelled** data
 
-Build classifier to distinguish labelled from unlabelled data and distinguish labels between each other:
-
-+ Binary classifier lesion vs non-lesion becomes
-+ Trinary classifier lesion vs non-lesion vs unlabelled
+![](./ssl.png)
 
 Results
 ========================================================
