@@ -5,54 +5,85 @@ date: 14-12-17
 autosize: true
 
 
+Multiple Sclerosis Background
+========================================================
+
+Multiple sclerosis (or MS) is a chronic disease that attacks the
+central nervous system (brain and spinal
+cord). 
+
+Symptoms can be mild to severe leading to paralysis and/or loss of vision.
+
+Caused by demyelination of nerve fibers that leads to scarring (sclerosis).
+
+Scarring observed as **lesions** on **MRI scans**
+
+
 Multiple sclerosis & MRI
 ========================================================
 
-Multiple sclerosis is a brain disease characterized by recurring or progressive **lesions** on white matter
 
-Can be seen on **MRI scans**
-
-Automatic segmentation would have important applications in diagnosing and monitoring the disease
-
-Multiple sclerosis & MRI
-========================================================
-
-![](./lesion_unlabelled.png)
-![](./lesion_3d_unlabelled.png)
+![](./Presentation-figure/lesion.png)
+![](./Presentation-figure/lesion_3d_labelled.png)
 
 
 Multiple sclerosis & MRI
 ========================================================
 
-![](./lesion.png)
-![](lesion_3d_labelled.png)
+![](./Presentation-figure/lesion_unlabelled.png)
+![](./Presentation-figure/lesion_3d_unlabelled.png)
 
 Difficulty of MRI segmentation
 ========================================================
 
 + MRIs are expensive
-+ MRIs are big ($512 \times 512 \times 512$ voxels)
-+ Physicians are expensive
++ MRIs are big ($512 \times 512 \times 512$ voxels (3d pixel))
++ Expert annotations are expensive
++ Expert annotations are highly variable
 + Class imbalance (1.5% of brain mass for patients experiencing a lesion)
 
-$\Longrightarrow$ Export annotation for supervised learning is not feasible, thus we are left with very few annotated MRI scans
+$\Longrightarrow$ Expert annotation for supervised learning is not feasible, thus we are left with very few annotated MRI scans
 
 
-Deep learning for lesion segmentation
+Data Source
 ========================================================
 
-Similar to image segmentation: work with **3D convolutional neural networks** and classify each voxel individually: direct segmentation very hard because of small training set (20 MRIs)
+MICCAI 2008
 
-Enhance data with **Generative adverserial networks** and use **semi-supervised learning**
+Medical Image Computing and Computer assisted intervention
+
++ 20 segmented MRI images from 2 sources
++ Standard benchmark for MS segmentation
+
+Approach
+========================================================
+
+Similar to image segmentation: work with **3D convolutional neural networks** and classify voxels
+
+- Balanced random sampling of voxels 
+- GAN to create additional data
+- Semi supervised approach to use external data
+- Deep Convolutional Network
+
+![](./Presentation-figure/patch.png)
+
+
+Generative Adverserial Networks
+========================================================
+Create more data with **Generative adverserial networks** and use **semi-supervised learning**
+
+![](./Presentation-figure/gan.png)
 
 Semi-supervised learning
 ========================================================
 
 Use **combination** of **labelled** and **unlabelled** data
 
-![](./ssl.png)
+![](./Presentation-figure/ssl.png)
 
-Results & Outlook
+
+
+Results
 ========================================================
 
 - Trained GAN to generate additional patches of lesions
@@ -60,6 +91,12 @@ Results & Outlook
 - Experiencing difficulties training the classification model
   - Weak signal or bug in pipeline?
 
-- Future work :
-  - incorporate GAN directly into classifier
-  - add more data sources
+Future Work
+========================================================
+  - Incorporate GAN directly into classifier
+  - Add more data sources
+  - Test transfer learning from BRATS
+  - Submit predictions to MICCAI and other competions
+  - Test on *real* clinical data from ongoing trials
+
+*Looking for team members*
